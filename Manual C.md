@@ -2,7 +2,7 @@
 tags: [Import-8d0a]
 title: Manual C
 created: '2024-01-24T08:28:52.548Z'
-modified: '2024-01-24T08:41:25.275Z'
+modified: '2024-01-24T18:30:54.466Z'
 ---
 
 # Manual C#
@@ -362,6 +362,255 @@ Es importante utilizar el tipo de datos correcto para la variable correspondient
 
 | Tipo de dato | Tamaño | Descripcion |
 |----------|----------|----------|
-| Row 1    | Cell 2   | Cell 3   |
-| Row 2    | Cell 5   | Cell 6   |
-| Row 3    | Cell 8   | Cell 9   |
+| int    | 4 bytes   | Almacena numeros enteros desde -2,147,483,648 a 2,147,483,647   |
+| long    | 8 bytes   | Almacena numero enteros desde -9,223,372,036,854,775,808 a 9,223,372,036,854,775,807   |
+| float   | 4 bytes   | Almacena numeros fraccionales suficiente para almacenar de 6 a 7 dígitos decimales  |
+| double   | 8 bytes   | Almacena numeros fraccinonales Suficiente para almacenar 15 dígitos decimales   |
+| bool   | 1 bit   | Almacena verdadero o falso   |
+| char   | 2 bytes   | Almacena caracteres o letras rodeado de comillas simples   |
+| string  | 2 bytes por caracter   | Almacena caracteres rodeado de comillas dobles   |
+
+### Números
+
+Los tipos de números se dividen en dos grupos:
+
+**Los tipos de enteros** almacenan números enteros, positivos o negativos (como 123 o -456), sin decimales. Los tipos válidos son `int` y `long`.
+
+**Los tipos de coma flotante** representan números con una parte fraccionaria que contienen uno o más decimales. Los tipos válidos son `float` y `double`.
+
+## Tipos de números enteros
+
+#### Int
+
+El tipo de dato `int` puede almacenar números enteros desde -2147483648 hasta 2147483647.
+
+```
+int myNum = 100000;
+Console.WriteLine(myNum);
+```
+#### Long
+
+El tipo de dato `long` puede almacenar números enteros desde -9223372036854775808 hasta 9223372036854775807.
+Esto se usa cuando `int` no es lo suficientemente grande para almacenar el valor. Tenga en cuenta que debe terminar el valor con una "L":
+
+```
+long myNum = 15000000000L;
+Console.WriteLine(myNum);
+```
+
+## Tipos de coma flotante
+
+Debe utilizar un tipo de coma flotante siempre que necesite un número con un decimal, como 9,99 o 3,14515.
+
+Los tipos de datos `float` y `double` pueden almacenar números fraccionarios. Tenga en cuenta que debe finalizar el valor con una "F" para flotantes y una "D" para dobles:
+
+```
+float myNum = 5.75F;
+Console.WriteLine(myNum);
+```
+```
+double myNum = 19.99D;
+Console.WriteLine(myNum);
+```
+
+#### Números científicos
+
+Un número de coma flotante también puede ser un número científico con una "e" para indicar la potencia de 10:
+
+```
+float f1 = 35e3F;
+double d1 = 12E4D;
+Console.WriteLine(f1);
+Console.WriteLine(d1);
+```
+
+### Booleanos
+
+Un tipo de datos booleano se declara con la palabra clave `bool` y solo puede tomar los valores `true` o `false`:
+
+```
+bool isCSharpFun = true;
+bool isFishTasty = false;
+Console.WriteLine(isCSharpFun);   // Outputs True
+Console.WriteLine(isFishTasty);   // Outputs False
+```
+
+Los valores booleanos se utilizan principalmente para pruebas condicionales.
+
+### Caracteres
+
+El tipo de dato `char` se utiliza para almacenar un solo carácter. El carácter debe estar entre comillas simples, como 'A' o 'c':
+
+```
+char myGrade = 'B';
+Console.WriteLine(myGrade);
+```
+
+### Strings
+
+El tipo de dato `string` se utiliza para almacenar una secuencia de caracteres (texto). Los valores de cadena deben estar entre comillas dobles:
+
+```
+string greeting = "Hello World";
+Console.WriteLine(greeting);
+```
+
+## Conversión de tipo
+
+La conversión de tipos es cuando asigna un valor de un tipo de datos a otro tipo.
+
+En C#, existen dos tipos de conversión:
+
+- **Conversión implícita** (automáticamente): conversión de un tipo más pequeño a un tamaño de tipo más grande `char`-> `int`-> `long`-> `float`->`double`
+
+- **Conversión explícita** (manualmente): convertir un tipo más grande en un tipo de tamaño más pequeño
+`double`-> `float`-> `long`-> `int`->`char`
+
+### Conversión implícita
+
+La conversión implícita se realiza automáticamente al pasar un tipo de tamaño más pequeño a un tipo de tamaño más grande:
+
+```
+int myInt = 9;
+double myDouble = myInt;       // Automatic casting: int to double
+
+Console.WriteLine(myInt);      // Outputs 9
+Console.WriteLine(myDouble);   // Outputs 9
+```
+
+### Conversión explícita
+
+La conversión explícita se debe realizar manualmente colocando el tipo entre paréntesis delante del valor:
+
+```
+double myDouble = 9.78;
+int myInt = (int) myDouble;    // Manual casting: double to int
+
+Console.WriteLine(myDouble);   // Outputs 9.78
+Console.WriteLine(myInt);      // Outputs 9
+```
+
+### Métodos de conversión de tipos
+
+También es posible convertir tipos de datos explícitamente utilizando métodos integrados, como `Convert.ToBoolean`, `Convert.ToDouble`, `Convert.ToString`, `Convert.ToInt32`( int) y `Convert.ToInt64`( long):
+
+```
+int myInt = 10;
+double myDouble = 5.25;
+bool myBool = true;
+
+Console.WriteLine(Convert.ToString(myInt));    // convert int to string
+Console.WriteLine(Convert.ToDouble(myInt));    // convert int to double
+Console.WriteLine(Convert.ToInt32(myDouble));  // convert double to int
+Console.WriteLine(Convert.ToString(myBool));   // convert bool to string
+```
+
+## Entrada de usuario
+
+### Obtener información del usuario
+
+Ya ha aprendido que `Console.WriteLine()`se utiliza para imprimir valores. Ahora lo usaremos `Console.ReadLine()`para obtener la entrada del usuario.
+
+En el siguiente ejemplo, el usuario puede ingresar su nombre de usuario, que se almacena en la variable `userName`. Luego imprimimos el valor de `userName`:
+
+```
+// Type your username and press enter
+Console.WriteLine("Enter username:");
+
+// Create a string variable and get user input from the keyboard and store it in the variable
+string userName = Console.ReadLine();
+
+// Print the value of the variable (userName), which will display the input value
+Console.WriteLine("Username is: " + userName);
+```
+
+### Entrada de usuario y números
+
+El método `Console.ReadLine()` devuelve un string. Por lo tanto, no puede obtener información de otro tipo de datos, como `int`. El siguiente programa provocará un error:
+
+```
+Console.WriteLine("Enter your age:");
+int age = Console.ReadLine();
+Console.WriteLine("Your age is: " + age);
+```
+
+El mensaje de error será algo como esto:
+
+`Cannot implicitly convert type 'string' to 'int'`
+
+Como dice el mensaje de error, no se puede convertir implícitamente el tipo 'string' a 'int'.
+
+Afortunadamente, acabas de aprender en el capítulo anterior (Conversión de tipos) que puedes convertir cualquier tipo explícitamente, utilizando uno de los métodos: `Convert.To`:
+
+```
+Console.WriteLine("Enter your age:");
+int age = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Your age is: " + age);
+```
+
+## Operadores 
+
+Los operadores se utilizan para realizar operaciones con variables y valores.
+
+En el siguiente ejemplo, utilizamos el operador `+` para sumar dos valores:
+
+```
+int x = 100 + 50;
+```
+
+Aunque el operador `+` se usa a menudo para sumar dos valores, como en el ejemplo anterior, también se puede usar para sumar una variable y un valor, o una variable y otra variable:
+
+```
+int sum1 = 100 + 50;        // 150 (100 + 50)
+int sum2 = sum1 + 250;      // 400 (150 + 250)
+int sum3 = sum2 + sum2;     // 800 (400 + 400)
+```
+
+### Operadores aritméticos
+
+Los operadores aritméticos se utilizan para realizar operaciones matemáticas comunes:
+
+| Tipo de dato | Tamaño | Descripcion | Ejemplo |
+|----------|----------|----------|----------|
+| +  | Adicion   | Añade juntos dos valores   | x + y |
+| -  | Subtraccion   | Sustrae un valor del otro   | x - y |
+| * | Multiplicacion   | Multiplica dos valores | x * y |
+| /   | Divicion   | Divide un valor por otro   | x / y |
+| %  | Modulo   | Devuelve el resto de la divicion   | x % y |
+| ++  | Incrementar   | Incrementa el valor de una variable en 1   | x++ |
+| --	 | Decrementar   | Decrementa el valor de una variable en 1   | x-- |
+
+## Operadores de asignación
+
+Los operadores de asignación se utilizan para asignar valores a variables.
+
+En el siguiente ejemplo, utilizamos el operador de asignación `=` para asignar el valor 10 a una variable llamada x :
+
+```
+int x = 10;
+```
+
+El operador de asignación de suma `+=` agrega un valor a una variable:
+
+```
+int x = 10;
+x += 5;
+```
+
+Una lista de todos los operadores de asignación:
+
+|Operator|	Example|	Same As|
+|----------|----------|----------|
+|`=` |	`x = 5` |	`x = 5`	|
+|`+=` |	`x += 3` |	`x = x + 3`	|
+|`-=` |	`x -= 3` |	`x = x - 3`	|
+|`*=` |	`x *= 3` |	`x = x * 3`	|
+|`/=`	| `x /= 3` |	`x = x / 3`	|
+|`%=`	| `x %= 3` |	`x = x % 3`	|
+|`&=`	| `x &= 3` |	`x = x & 3`	|
+| `|=` |	`x |= 3` |	`x = x | 3`	|
+|`^=`	|`x ^= 3`	| `x = x ^ 3` |	
+| `>>=`	|`x >>= 3`	| `x = x >> 3` |	
+| `<<=`	| `x <<= 3`	| `x = x << 3`|
+
+
