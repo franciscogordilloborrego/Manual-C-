@@ -2,20 +2,54 @@
 tags: [Import-8d0a]
 title: Manual C
 created: '2024-01-24T08:28:52.548Z'
-modified: '2024-01-24T18:30:54.466Z'
+modified: '2024-01-28T12:55:09.899Z'
 ---
 
 # Manual C#
 
+<div style="page-break-after: always;"></div>
+
+# Indice
+
+- [Que es C#](#¿Que-es-C#?)
+- [Instalar C#IDE en windows](#Instalar-C#-IDE-en-Windows)
+- [Instalar C# en Linux](#Instalar-C#-en-Linux)
+- [Creacion de Hola mundo](#Creacion-de-Hola-mundo)
+- [Salidas](#Salidas)
+- [Comentarios](#Comentarios)
+- [Comentarios de varias líneas](#Comentarios-de-varias-líneas)
+- [Variables](#Variables)
+- [Constantes](#Constantes)
+- [Variables de visualización](#Variables-de-visualización)
+- [Múltiples variables](#Múltiples-variables)
+- [Identificadores](#Identificadores)
+- [Tipos de datos](#Tipos-de-datos)
+- [Tipos de números enteros](#Tipos-de-números-enteros)
+- [Tipos de coma flotante](#Tipos-de-coma-flotante)
+- [Conversión de tipo](#Conversión-de-tipo)
+- [Entrada de usuario](#Entrada-de-usuario)
+- [Operadores ](#Operadores)
+- [Operadores de asignación](#Operadores-de-asignación)
+- [Operadores de comparación](#Operadores-de-comparación)
+- [Operadores lógicos ](#Operadores-lógicos)
+- [Matemáticas](#Matemáticas)
+
+<div style="page-break-after: always;"></div>
+
 ## ¿Que es C#?
+
+[Que es C#](#¿Que-es-C#?)
 
 C# es un lenguaje de programacion creado por Microsoft orientado a objetos que utiliza .NET Framework.
 Es de la familia de C. Es parecido a C++ y a JAVA.
 
-La primera version fue lanzada en 2002. La ultima es la 12, lanzada en noviembre de 2023.
+La primera version fue lanzada en 2002. La ultima es la 12, lanzada en noviembre de 2023. \newpage
 
+<div style="page-break-after: always;"></div>
 
 ## Instalar C# IDE en Windows
+
+[Instalar C#IDE en windows](#Instalar-C#-IDE-en-Windows)
 
 Lo primero es instalar .NET. https://visualstudio.microsoft.com/es/vs/community/
 
@@ -41,7 +75,11 @@ Le damos a continuar y ya lo tenemos
 
 ![imagen](.\imagen6.png)
 
+<div style="page-break-after: always;"></div>
+
 ## Instalar C# en Linux
+
+[Instalar C# en Linux](#Instalar-C#-en-Linux)
 
 Descargar el script con wget:
 
@@ -71,7 +109,11 @@ export DOTNET_ROOT=$HOME/.dotnet
 export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools
 ```
 
+<div style="page-break-after: always;"></div>
+
 ## Creacion de Hola mundo
+
+[Creacion de Hola mundo](#Creacion-de-Hola-mundo)
 
 Escribir en el terminal este comando:
 
@@ -116,7 +158,11 @@ Linea 7: Otra cosa que siempre aparece en un programa C# es el método `Main`. S
 
 Linea 9: `Console` es una clase del espacio de nombres `System`, que tiene un método `WriteLine()` que se utiliza para imprimir texto. En el ejemplo, aparece "¡Hello World!".
 
+<div style="page-break-after: always;"></div>
+
 ## Salidas
+
+[Salidas](#Salidas)
 
 Para generar valores o imprimir texto en C#, puede utilizar el método `WriteLine()`:
 
@@ -149,7 +195,11 @@ Console.Write("Hello World! ");
 Console.Write("I will print on the same line.");
 ```
 
+<div style="page-break-after: always;"></div>
+
 ## Comentarios
+
+[Comentarios](#Comentarios)
 
 Los comentarios se pueden utilizar para explicar el código C# y hacerlo más legible. También se puede utilizar para evitar la ejecución al probar código alternativo.
 
@@ -170,7 +220,11 @@ Este ejemplo utiliza un comentario de una linea al final de una linea de código
 Console.WriteLine("Hello World!");  // This is a comment
 ```
 
+<div style="page-break-after: always;"></div>
+
 ## Comentarios de varias líneas
+
+[Comentarios de varias líneas](#Comentarios-de-varias-líneas)
 
 Los comentarios de varias líneas comienzan con `/*`y terminan con `*/`
 
@@ -184,7 +238,11 @@ to the screen, and it is amazing */
 Console.WriteLine("Hello World!");
 ```
 
+<div style="page-break-after: always;"></div>
+
 ## Variables
+
+[Variables](#Variables)
 
 Las variables son contenedores para almacenar valores de datos.
 
@@ -250,7 +308,11 @@ bool myBool = true;
 string myText = "Hello";
 ```
 
+<div style="page-break-after: always;"></div>
+
 ## Constantes
+
+[Constantes](#Constantes)
 
 Si no quieres que se sobrescriban los valores existentes, puede agregar la palabra clave `const` delante del tipo de variable.
 
@@ -265,7 +327,11 @@ La palabra clave `const` es útil cuando quieres que una variable almacene siemp
 
 Nota: No se puede declarar una variable constante sin asignar el valor. Si lo haces, se producirá un error: un campo constante requiere que se proporcione un valor .
 
+<div style="page-break-after: always;"></div>
+
 ## Variables de visualización
+
+[Variables de visualización](#Variables-de-visualización)
 
 ### Mostrar variables
 
@@ -295,7 +361,11 @@ int y = 6;
 Console.WriteLine(x + y); // Print the value of x + y
 ```
 
+<div style="page-break-after: always;"></div>
+
 ## Múltiples variables
+
+[Múltiples variables](#Múltiples-variables)
 
 ### Declarar muchas variables
 
@@ -314,7 +384,11 @@ x = y = z = 50;
 Console.WriteLine(x + y + z);
 ```
 
+<div style="page-break-after: always;"></div>
+
 ## Identificadores
+
+[Identificadores](#Identificadores)
 
 Todas las variables de C# deben identificarse con nombres únicos .
 
@@ -344,7 +418,11 @@ Las reglas generales para nombrar variables son:
 
 - Las palabras reservadas (como palabras clave de C#, como `int` o `double`) no se pueden utilizar como nombres.
 
+<div style="page-break-after: always;"></div>
+
 ## Tipos de datos
+
+[Tipos de datos](#Tipos-de-datos)
 
 Como se explica en el capítulo de variables, una variable en C# debe ser un tipo de datos específico:
 
@@ -378,7 +456,11 @@ Los tipos de números se dividen en dos grupos:
 
 **Los tipos de coma flotante** representan números con una parte fraccionaria que contienen uno o más decimales. Los tipos válidos son `float` y `double`.
 
+<div style="page-break-after: always;"></div>
+
 ## Tipos de números enteros
+
+[Tipos de números enteros](#Tipos-de-números-enteros)
 
 #### Int
 
@@ -398,7 +480,11 @@ long myNum = 15000000000L;
 Console.WriteLine(myNum);
 ```
 
+<div style="page-break-after: always;"></div>
+
 ## Tipos de coma flotante
+
+[Tipos de coma flotante](#Tipos-de-coma-flotante)
 
 Debe utilizar un tipo de coma flotante siempre que necesite un número con un decimal, como 9,99 o 3,14515.
 
@@ -455,7 +541,11 @@ string greeting = "Hello World";
 Console.WriteLine(greeting);
 ```
 
+<div style="page-break-after: always;"></div>
+
 ## Conversión de tipo
+
+[Conversión de tipo](#Conversión-de-tipo)
 
 La conversión de tipos es cuando asigna un valor de un tipo de datos a otro tipo.
 
@@ -505,7 +595,11 @@ Console.WriteLine(Convert.ToInt32(myDouble));  // convert double to int
 Console.WriteLine(Convert.ToString(myBool));   // convert bool to string
 ```
 
+<div style="page-break-after: always;"></div>
+
 ## Entrada de usuario
+
+[Entrada de usuario](#Entrada-de-usuario)
 
 ### Obtener información del usuario
 
@@ -548,7 +642,11 @@ int age = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Your age is: " + age);
 ```
 
+<div style="page-break-after: always;"></div>
+
 ## Operadores 
+
+[Operadores ](#Operadores)
 
 Los operadores se utilizan para realizar operaciones con variables y valores.
 
@@ -566,6 +664,8 @@ int sum2 = sum1 + 250;      // 400 (150 + 250)
 int sum3 = sum2 + sum2;     // 800 (400 + 400)
 ```
 
+<div style="page-break-after: always;"></div>
+
 ### Operadores aritméticos
 
 Los operadores aritméticos se utilizan para realizar operaciones matemáticas comunes:
@@ -580,7 +680,11 @@ Los operadores aritméticos se utilizan para realizar operaciones matemáticas c
 | ++  | Incrementar   | Incrementa el valor de una variable en 1   | x++ |
 | --	 | Decrementar   | Decrementa el valor de una variable en 1   | x-- |
 
+<div style="page-break-after: always;"></div>
+
 ## Operadores de asignación
+
+[Operadores de asignación](#Operadores-de-asignación)
 
 Los operadores de asignación se utilizan para asignar valores a variables.
 
@@ -599,7 +703,7 @@ x += 5;
 
 Una lista de todos los operadores de asignación:
 
-|Operator|	Example|	Same As|
+|Operador|	Ejemplo|	es como|
 |----------|----------|----------|
 |`=` |	`x = 5` |	`x = 5`	|
 |`+=` |	`x += 3` |	`x = x + 3`	|
@@ -612,5 +716,96 @@ Una lista de todos los operadores de asignación:
 |`^=`	|`x ^= 3`	| `x = x ^ 3` |	
 | `>>=`	|`x >>= 3`	| `x = x >> 3` |	
 | `<<=`	| `x <<= 3`	| `x = x << 3`|
+
+<div style="page-break-after: always;"></div>
+
+## Operadores de comparación
+
+[Operadores de comparación](#Operadores-de-comparación)
+
+Los operadores de comparación se utilizan para comparar dos valores (o variables). Esto es importante en programación, porque nos ayuda a encontrar respuestas y tomar decisiones.
+
+El valor de retorno de una comparación es `True` o `False`.
+
+En el siguiente ejemplo, utilizamos el **operador mayor que** `>` para saber si 5 es mayor que 3:
+
+```
+int x = 5;
+int y = 3;
+Console.WriteLine(x > y); // returns True because 5 is greater than 3
+```
+
+Una lista de todos los operadores de comparación:
+
+|Operador|	Nombre |	Ejemplo|
+|----------|----------|----------|
+|`==` |	`igual a` |	`x == y`	|
+|`!=` |	`diferente a` |	`x != y`	|
+|`>` |	`mayor que` |	`x > y`	|
+|`<` |	`menor que` |	`x < y`	|
+|`>=`	| `mayor o igual a` |	`x >= y`	|
+|`<=`	| `menor o igual a` |	`x <= y`	|
+
+## Operadores lógicos 
+
+[Operadores lógicos ](#Operadores-lógicos)
+
+Al igual que con los operadores de comparación , también puede probar los valores `True`o `False`con operadores lógicos .
+
+Los operadores lógicos se utilizan para determinar la lógica entre variables o valores:
+
+|Operador|	Nombre |	Descripcion| Ejemplo |
+|----------|----------|----------|----------|
+|`&& 	` |	`logico and` |	`Devuelve True si ambas afirmaciones son verdaderas`	| `x < 5 &&  x < 10` |
+|`|| ` |	`logico or` |	`Devuelve True si una de las afirmaciones es verdadera.`	| `x < 5 || x < 4` |
+|`!	` |	`logico not` |	`Invierte el resultado, devuelve False si el resultado es true`	| `!(x < 5 && x < 10)` |
+
+<div style="page-break-after: always;"></div>
+
+## Matemáticas
+
+[Matemáticas](#Matemáticas)
+
+La clase Matematicas tienen muchos métodos que le permiten realizar tareas matemáticas con números.
+
+### Math.Max(x,y)
+
+El método se puede utilizar para encontrar el valor más alto de x e y :`Math.Max(x,y)`
+
+```
+Math.Max(5, 10);
+```
+
+### Math.Min(x,y)
+
+El método se puede utilizar para encontrar el valor más bajo de x e y :`Math.Min(x,y)`
+
+```
+Math.Min(5, 10);
+```
+
+### Math.Sqrt(x)
+
+El método devuelve la raíz cuadrada de x :`Math.Sqrt(x)`
+
+```
+Math.Sqrt(64);
+```
+
+### Math.Abs(x)
+
+El método devuelve el valor absoluto (positivo) de x :`Math.Abs(x)`
+
+```
+Math.Abs(-4.7);
+```
+
+### Math.Round()
+
+`Math.Round()`redondea un número al número entero más cercano:
+
+```
+Math.Round(9.99);
+```
 
 
